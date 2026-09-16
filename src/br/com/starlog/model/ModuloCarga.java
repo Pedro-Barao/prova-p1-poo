@@ -57,7 +57,7 @@ public class ModuloCarga {
         if(getCapacidadeMaxima() < cargas.size())
         {
 
-            throw new CapacidadeExcedidaException("codigoModulo");
+            throw new CapacidadeExcedidaException("Excessao capturada: Modulo '" + getCodigoModulo() + "' atingiu a capacidade maxima de " + getCapacidadeMaxima() + " cargas");
 
         }
 

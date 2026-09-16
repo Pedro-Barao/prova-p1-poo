@@ -2,8 +2,8 @@ package br.com.starlog.main;
 
 import java.util.HashSet;
 
+import br.com.starlog.exception.CapacidadeExcedidaException;
 import br.com.starlog.model.BaseLancamento;
-import br.com.starlog.model.CapacidadeExcedidaException;
 import br.com.starlog.model.Carga;
 import br.com.starlog.model.ModuloCarga;
 
@@ -36,7 +36,6 @@ public class MainControle {
 
 
         //P04: Try e Catch
-
         try {
 
             modulo.carregarCarga(c4);
@@ -46,7 +45,7 @@ public class MainControle {
         catch (CapacidadeExcedidaException error){
 
             System.out.println(error);
-
+            
         }
 
 
