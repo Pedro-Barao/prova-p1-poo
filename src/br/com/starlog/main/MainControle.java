@@ -3,6 +3,7 @@ package br.com.starlog.main;
 import java.util.HashSet;
 
 import br.com.starlog.model.BaseLancamento;
+import br.com.starlog.model.CapacidadeExcedidaException;
 import br.com.starlog.model.Carga;
 import br.com.starlog.model.ModuloCarga;
 
@@ -34,7 +35,19 @@ public class MainControle {
         modulo.carregarCarga(c3);
 
 
-        //P04
+        //P04: Try e Catch
+
+        try {
+
+            modulo.carregarCarga(c4);
+
+        }
+        
+        catch (CapacidadeExcedidaException error){
+
+            System.out.println(error);
+
+        }
 
 
         //P05: Buscando Modulo
@@ -56,9 +69,28 @@ public class MainControle {
         //P09: Tamanho do manifesto
         HashSet<Carga> manifesto = new HashSet<>();
 
-        Carga c1 = new Carga(null, null, 0, 0);
+        Carga c5 = new Carga("ORB-101-SP", "CRIOGENICA", 9.0, 990.00);
         
         manifesto.add(c1);
+        manifesto.add(c2);
+        manifesto.add(c5);
+
+        System.out.println("\nTamanho do manifesto:\n(HashSet) " + manifesto.size());
+
+        try {
+
+            Carga c6 = new Carga("", "PADRAO", 1.0, 50.00);
+
+            manifesto.add(c6);
+
+        }
+
+        catch(IllegalArgumentException error) {
+
+            System.out.println(error);
+
+        }
+
     }
     
 }

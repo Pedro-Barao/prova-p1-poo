@@ -6,7 +6,7 @@ public class CapacidadeExcedidaException {
     public CapacidadeExcedidaException(String mensagem) throws IllegalArgumentException
     {
 
-        throw new IllegalArgumentException(mensagem);
+        super();
 
     }
 
